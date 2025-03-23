@@ -11,7 +11,7 @@
         <h1>Blog team pelon</h1>
     </header>
     <main>
-        <section id="nueva-publicacion">
+        <section id="nueva-publicacion" style="display: none;"> <!-- Oculto por defecto -->
             <h2>Nueva Publicación</h2>
             <input type="text" id="titulo" placeholder="Título">
             <textarea id="contenido" placeholder="Escribe aquí..."></textarea>
@@ -39,24 +39,9 @@
                 <h3>Yamileth Gonzales</h3>
                 <p></p>
             </div>
-            <div class="tarjeta" data-nombre="Nombre 3" data-descripcion="Descripción detallada de Nombre 3.">
-                <img src="foto3.jpg" alt="Nombre 3">
-                <h3>Nombre 3</h3>
-                <p>Descripción corta...</p>
-            </div>
-            <div class="tarjeta" data-nombre="Nombre 4" data-descripcion="Descripción detallada de Nombre 4.">
-                <img src="foto4.jpg" alt="Nombre 4">
-                <h3>Nombre 4</h3>
-                <p>Descripción corta...</p>
-            </div>
-            <div class="tarjeta" data-nombre="Nombre 5" data-descripcion="Descripción detallada de Nombre 5.">
-                <img src="foto5.jpg" alt="Nombre 5">
-                <h3>Nombre 5</h3>
-                <p>Descripción corta...</p>
-            </div>
+            <!-- Puedes agregar más miembros aquí -->
         </div>
 
-        <!-- Información detallada (Arreglada) -->
         <div id="info-detallada" class="oculto">
             <button onclick="cerrarInfo()">Cerrar</button>
             <h3 id="info-nombre"></h3>
@@ -67,6 +52,8 @@
     <script src="script.js"></script>
     
     <script>
+        
+
         // Mostrar la información al hacer clic en una tarjeta
         document.querySelectorAll('.tarjeta').forEach(tarjeta => {
             tarjeta.addEventListener('click', function() {
@@ -86,3 +73,4 @@
     </script>
 </body>
 </html>
+
