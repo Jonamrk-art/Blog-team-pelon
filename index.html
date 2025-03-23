@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Amigos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Blog team pelon</h1>
+    </header>
+    <main>
+        <section id="nueva-publicacion">
+            <h2>Nueva Publicación</h2>
+            <input type="text" id="titulo" placeholder="Título">
+            <textarea id="contenido" placeholder="Escribe aquí..."></textarea>
+            <input type="file" id="imagen" accept="image/*">
+            <input type="file" id="video" accept="video/*">
+            <input type="file" id="miniatura" accept="image/*">
+            <button id="publicar">Publicar</button>
+        </section>
+        <section id="publicaciones">
+            <h2>Publicaciones</h2>
+            <div id="lista-publicaciones"></div>
+        </section>
+    </main>
+
+    <section id="nosotros">
+        <h2>Nosotros</h2>
+        <div class="equipo">
+            <div class="tarjeta" data-nombre="Jonathan Aldana" data-descripcion="¡Hey! Soy Jonathan, el cerebro detrás de este blog (aunque a veces se me va la señal 😜). Aquí compartimos nuestras locuras, recuerdos y momentos épicos con mis amigos. Si te gusta el buen rollo y las historias geniales, ¡bienvenido!">
+                <img src="1.jpg" alt="Jonathan Aldana">
+                <h3>Jonathan Aldana</h3>
+                <p></p>
+            </div>
+            <div class="tarjeta" data-nombre="Yamileth" data-descripcion="Descripción detallada de Nombre 2.">
+                <img src="2.jpg" alt="Yamileth">
+                <h3>Yamileth Gonzales</h3>
+                <p></p>
+            </div>
+            <div class="tarjeta" data-nombre="Nombre 3" data-descripcion="Descripción detallada de Nombre 3.">
+                <img src="foto3.jpg" alt="Nombre 3">
+                <h3>Nombre 3</h3>
+                <p>Descripción corta...</p>
+            </div>
+            <div class="tarjeta" data-nombre="Nombre 4" data-descripcion="Descripción detallada de Nombre 4.">
+                <img src="foto4.jpg" alt="Nombre 4">
+                <h3>Nombre 4</h3>
+                <p>Descripción corta...</p>
+            </div>
+            <div class="tarjeta" data-nombre="Nombre 5" data-descripcion="Descripción detallada de Nombre 5.">
+                <img src="foto5.jpg" alt="Nombre 5">
+                <h3>Nombre 5</h3>
+                <p>Descripción corta...</p>
+            </div>
+        </div>
+
+        <!-- Información detallada (Arreglada) -->
+        <div id="info-detallada" class="oculto">
+            <button onclick="cerrarInfo()">Cerrar</button>
+            <h3 id="info-nombre"></h3>
+            <p id="info-texto"></p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    
+    <script>
+        // Mostrar la información al hacer clic en una tarjeta
+        document.querySelectorAll('.tarjeta').forEach(tarjeta => {
+            tarjeta.addEventListener('click', function() {
+                const nombre = this.getAttribute('data-nombre');
+                const descripcion = this.getAttribute('data-descripcion');
+        
+                document.getElementById('info-nombre').textContent = nombre;
+                document.getElementById('info-texto').textContent = descripcion;
+                document.getElementById('info-detallada').style.display = 'block';
+            });
+        });
+
+        // Cerrar la información detallada
+        function cerrarInfo() {
+            document.getElementById('info-detallada').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
