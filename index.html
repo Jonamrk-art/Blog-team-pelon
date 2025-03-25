@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog de Amigos</title>
+    <title>Blog Team Pelón</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Blog team pelon</h1>
+        <h1>Blog Team Pelón</h1>
     </header>
     <main>
-        <section id="nueva-publicacion" style="display: none;"> <!-- Oculto por defecto -->
+        <!-- Formulario oculto hasta ser admin -->
+        <section id="nueva-publicacion" class="oculto">
             <h2>Nueva Publicación</h2>
             <input type="text" id="titulo" placeholder="Título">
             <textarea id="contenido" placeholder="Escribe aquí..."></textarea>
             <input type="file" id="imagen" accept="image/*">
             <input type="file" id="video" accept="video/*">
-            <input type="file" id="miniatura" accept="image/*">
             <button id="publicar">Publicar</button>
         </section>
+
         <section id="publicaciones">
             <h2>Publicaciones</h2>
             <div id="lista-publicaciones"></div>
@@ -29,48 +30,33 @@
     <section id="nosotros">
         <h2>Nosotros</h2>
         <div class="equipo">
-            <div class="tarjeta" data-nombre="Jonathan Aldana" data-descripcion="¡Hey! Soy Jonathan, el cerebro detrás de este blog (aunque a veces se me va la señal 😜). Aquí compartimos nuestras locuras, recuerdos y momentos épicos con mis amigos. Si te gusta el buen rollo y las historias geniales, ¡bienvenido!">
+            <div class="tarjeta" data-nombre="Jonathan Aldana" data-descripcion="¡Hey! Soy Jonathan...">
                 <img src="1.jpg" alt="Jonathan Aldana">
                 <h3>Jonathan Aldana</h3>
-                <p></p>
             </div>
-            <div class="tarjeta" data-nombre="Yamileth" data-descripcion="Descripción detallada de Nombre 2.">
+            <div class="tarjeta" data-nombre="Yamileth" data-descripcion="Descripción de Yamileth...">
                 <img src="2.jpg" alt="Yamileth">
                 <h3>Yamileth Gonzales</h3>
-                <p></p>
             </div>
-            <!-- Puedes agregar más miembros aquí -->
         </div>
 
         <div id="info-detallada" class="oculto">
-            <button onclick="cerrarInfo()">Cerrar</button>
+            <button onclick="cerrarInfo()">✕</button>
             <h3 id="info-nombre"></h3>
             <p id="info-texto"></p>
         </div>
     </section>
 
-    <script src="script.js"></script>
-    
-    <script>
-        
+    <!-- Modal de acceso secreto -->
+    <div id="admin-login" class="oculto">
+        <div class="contenedor-login">
+            <h3>Acceso Admin</h3>
+            <input type="password" id="clave-secreta" placeholder="Ingresa tu clave">
+            <button id="btn-acceso">Entrar</button>
+        </div>
+    </div>
 
-        // Mostrar la información al hacer clic en una tarjeta
-        document.querySelectorAll('.tarjeta').forEach(tarjeta => {
-            tarjeta.addEventListener('click', function() {
-                const nombre = this.getAttribute('data-nombre');
-                const descripcion = this.getAttribute('data-descripcion');
-        
-                document.getElementById('info-nombre').textContent = nombre;
-                document.getElementById('info-texto').textContent = descripcion;
-                document.getElementById('info-detallada').style.display = 'block';
-            });
-        });
-
-        // Cerrar la información detallada
-        function cerrarInfo() {
-            document.getElementById('info-detallada').style.display = 'none';
-        }
-    </script>
+    <script src="script.js" type="module"></script>
 </body>
 </html>
 
