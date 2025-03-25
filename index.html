@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Team Pelón</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Carga los SDKs de Firebase primero -->
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-storage.js"></script>
 </head>
 <body>
     <header>
@@ -56,7 +60,8 @@
         </div>
     </div>
 
-    <script src="script.js" type="module"></script>
+    <!-- Cambiado: script.js sin type="module" -->
+    <script src="script.js"></script>
 </body>
 </html>
 
