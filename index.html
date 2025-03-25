@@ -3,65 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Team Pelón</title>
+    <title>Blog del Team Pelón</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Carga los SDKs de Firebase primero -->
+    <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-storage.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Blog Team Pelón</h1>
+    <header class="header-pastel">
+        <h1>Blog del Team Pelón 💜</h1>
     </header>
-    <main>
-        <!-- Formulario oculto hasta ser admin -->
-        <section id="nueva-publicacion" class="oculto">
-            <h2>Nueva Publicación</h2>
-            <input type="text" id="titulo" placeholder="Título">
-            <textarea id="contenido" placeholder="Escribe aquí..."></textarea>
-            <input type="file" id="imagen" accept="image/*">
-            <input type="file" id="video" accept="video/*">
-            <button id="publicar">Publicar</button>
-        </section>
 
-        <section id="publicaciones">
-            <h2>Publicaciones</h2>
-            <div id="lista-publicaciones"></div>
-        </section>
-    </main>
-
-    <section id="nosotros">
-        <h2>Nosotros</h2>
+    <!-- Sección Nosotros -->
+    <section id="nosotros" class="section-pastel">
+        <h2>✨ Nosotros</h2>
         <div class="equipo">
-            <div class="tarjeta" data-nombre="Jonathan Aldana" data-descripcion="¡Hey! Soy Jonathan...">
-                <img src="1.jpg" alt="Jonathan Aldana">
-                <h3>Jonathan Aldana</h3>
+            <!-- Miembro 1 -->
+            <div class="miembro" data-bio="¡Hola! Soy Jonathan, me gusta...">
+                <img src="1.jpg" alt="Jonamrk">
+                <h3>Jonamrk</h3>
             </div>
-            <div class="tarjeta" data-nombre="Yamileth" data-descripcion="Descripción de Yamileth...">
-                <img src="2.jpg" alt="Yamileth">
-                <h3>Yamileth Gonzales</h3>
+            <!-- Repite para los otros 4 miembros -->
+            <div class="miembro" data-bio="¡Hola! Soy Yami, me gusta...">
+                <img src="2.jpg" alt="Yami CG">
+                <h3>Yami CG</h3>
             </div>
-        </div>
-
-        <div id="info-detallada" class="oculto">
-            <button onclick="cerrarInfo()">✕</button>
-            <h3 id="info-nombre"></h3>
-            <p id="info-texto"></p>
+            <div class="miembro" data-bio="¡Hola! Soy Yami, me gusta...">
+                <img src="2.jpg" alt="Yami CG">
+                <h3>Yami CG</h3>
+            </div>
+            <div class="miembro" data-bio="¡Hola! Soy Yami, me gusta...">
+                <img src="2.jpg" alt="Yami CG">
+                <h3>Yami CG</h3>
+            </div>
+            <div class="miembro" data-bio="¡Hola! Soy Yami, me gusta...">
+                <img src="2.jpg" alt="Yami CG">
+                <h3>Yami CG</h3>
+            </div>
         </div>
     </section>
 
-    <!-- Modal de acceso secreto -->
-    <div id="admin-login" class="oculto">
-        <div class="contenedor-login">
-            <h3>Acceso Admin</h3>
-            <input type="password" id="clave-secreta" placeholder="Ingresa tu clave">
-            <button id="btn-acceso">Entrar</button>
+    <!-- Sección Publicaciones -->
+    <section id="publicaciones" class="section-pastel">
+        <h2>📱 Nuestro Día a Día</h2>
+        <div id="lista-publicaciones"></div>
+    </section>
+
+    <!-- Modal para biografías -->
+    <div id="bio-modal" class="oculto">
+        <div class="modal-contenido">
+            <span class="cerrar">&times;</span>
+            <p id="bio-texto"></p>
         </div>
     </div>
 
-    <!-- Cambiado: script.js sin type="module" -->
     <script src="script.js"></script>
 </body>
 </html>
-
